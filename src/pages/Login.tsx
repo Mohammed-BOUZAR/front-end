@@ -31,10 +31,10 @@ const Login: React.FC = () => {
       })
       .then(data => {
         const token = data.token;
-        alert(token);
+        // alert(token);
         console.log(token);
         // Store the token in a cookie
-        Cookies.set('token', token);
+        Cookies.set('token', token, { expires: 7 });
         history.push('/home');
       })
       .catch(err => {

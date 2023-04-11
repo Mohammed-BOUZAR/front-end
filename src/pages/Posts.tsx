@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 import Cookies from 'js-cookie';
 import Header from '../components/Header';
 
-const Home: React.FC = () => {
+const Posts: React.FC = () => {
   const history = useHistory();
   const token = Cookies.get('token');
   // alert("token register: "+token);
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
       .then((data) => {
         console.log("data: ");
         console.log(data);
-        // data.forEach((e: any) => console.log(e._id +" "+e.content));
+        data.forEach((e: any) => console.log(e._id +" "+e.content));
         if (data.message) return alert(data.message);
         setPosts(data);
       })
@@ -49,21 +49,21 @@ const Home: React.FC = () => {
         {posts.map((post: any) => (
           
           <div key={post._id} id={post._id} className="card">
-            <div key={post._id} className='card-head'>
+            <div key={post._id}>
               <img src={post.user.profile ? post.user.profile : 'assets/person3.svg'} alt="" />
               <h2 className="card-title">{post.user.first_name} {post.user.last_name}</h2>
             </div>
-            {post.content && <p className='card-text'>{post.content}</p>}
+            {post.content && <p>{post.content}</p>}
             {post.links && post.links.map((file: any) => {
               <img src={file.path} alt="" />
             })}
-            <div  key={post.reactions.legth} className='reactions'>{post.reactions.length}</div>
-            <div  key={post._id} className='card-footer'>
+            <div  key={post._id}>{post.reactions ? post.reactions.length : 0}</div>
+            <div  key={post._id}>
               <span className='reaction'>
-                <img src="assets/like.svg" alt="" /> {post.reactions ? post.reactions.length : 0}
+                <img src="" alt="" /> {post.reactions ? post.reactions.length : 0}
               </span>
               <span className='comment'>
-                <img src="assets/comment.svg" alt="" /> {post.comments ? post.comments.length : 0}
+                <img src="" alt="" /> {post.comments ? post.comments.length : 0}
               </span>
             </div>
           </div>
@@ -87,4 +87,4 @@ const Home: React.FC = () => {
   );
 }
 
-export default Home;
+export default Posts;

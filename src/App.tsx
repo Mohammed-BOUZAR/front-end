@@ -2,45 +2,47 @@ import React, { useEffect, useState } from 'react';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Route, Redirect } from 'react-router-dom';
-import { useHistory } from 'react-router';
 
 
 import Register from './pages/Register';
 import Login from './pages/Login';
-// import Users from './pages/Users';
-// import User from './pages/User';
-// import Posts from './pages/Posts';
-// import Post from './pages/Post';
-// import Comments from './pages/Comments';
-// import Comment from './pages/Comment';
-// import Subcomments from './pages/Subcomments';
-// import Subcomment from './pages/Subcomment';
+import Users from './pages/Users';
+import User from './pages/User';
+import Posts from './pages/Posts';
+import Post from './pages/Post';
+import Comments from './pages/Comments';
+import Comment from './pages/Comment';
+import Subcomments from './pages/Subcomments';
+import Subcomment from './pages/Subcomment';
 import Home from './pages/Home';
 import Cookies from 'js-cookie';
+import Conversations from './pages/Conversations';
+import Messages from './pages/Messages';
+import Notifications from './pages/Notifications';
 
 const App: React.FC = () => {
-  const history = useHistory();
   const token = Cookies.get('token');
-  // alert("token app: "+token);
-  // if (token) return history.push('/home');
 
   return (
     <IonApp>
       <IonReactRouter>
         <IonRouterOutlet>
           {token ? <Redirect exact from="/" to="/home" />
-          : <Redirect exact from="/" to="/login" />}
+            : <Redirect exact from="/" to="/login" />}
+          <Route exact path="/home" component={Home} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
-          {/* <Route exact path="/users" component={Users} />
+          <Route exact path="/users" component={Users} />
+          <Route exact path="/conversations" component={Conversations} />
+          <Route exact path="/messages" component={Messages} />
+          <Route exact path="/notifications" component={Notifications} />
           <Route exact path="/users/:id" component={User} />
           <Route exact path="/posts" component={Posts} />
           <Route exact path="/posts/:postId" component={Post} />
           <Route exact path="/posts/:postId/comments" component={Comments} />
           <Route exact path="/posts/:postId/comments/:commentId" component={Comment} />
           <Route exact path="/posts/:postId/comments/:commentId/subcomments" component={Subcomments} />
-          <Route exact path="/posts/:postId/comments/:commentId/subcomments/:subCommentId" component={Subcomment} /> */}
-          <Route exact path="/home" component={Home} />
+          <Route exact path="/posts/:postId/comments/:commentId/subcomments/:subCommentId" component={Subcomment} />
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
