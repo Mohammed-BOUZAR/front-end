@@ -1,0 +1,203 @@
+/* Posts.css */
+
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px 20px 0px 20px;
+    width: 100%;
+    max-width: 332px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16pt;
+    text-align: left;
+}
+
+.card>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.card-head img {
+    height: 42px;
+    width: 42px;
+    border: 1px solid grey;
+    border-radius: 50%;
+}
+
+.card-footer img {
+    height: 32px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.logo {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.post {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 6px 8px;
+    margin-bottom: unset !important;
+    display: flex;
+    flex-direction: column !important;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    /* font-size: 16px; */
+    margin: 0 auto;
+}
+
+/* Additional styles for optional content */
+.card-text.file {
+    color: #777;
+}
+
+.card-text.reactions {
+    color: #666;
+}
+
+.card-text.comments {
+    color: #555;
+}
+
+.card-text.subcomments {
+    color: #444;
+}
+
+.create-post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 332px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.create-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 332px;
+    /* margin: 0px 10px; */
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.form-input {
+    margin: 10px 0px !important;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14pt;
+}
+
+.content {
+    width: 100%;
+}
+
+.file {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.file img {
+    height: 42px;
+    /* margin-left: 12px; */
+}
+
+.file button {
+    margin-left: 10px;
+}
+
+.form-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12pt;
+}
+
+
+
+.file-upload-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.file-upload-label {
+    cursor: pointer;
+}
+
+.upload-image {
+    height: 42px !important;
+    object-fit: cover;
+}
+
+.upload-text {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.file-upload-input {
+    display: none;
+}
+
+
+
+/* .comments {
+    display: flex;
+    flex-direction: column !important;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.commentText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 10px;
+    box-shadow: 0px 0px 4px -1px rgb(172, 172, 172);
+    margin: 5px 0px;
+} */

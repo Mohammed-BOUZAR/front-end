@@ -41,13 +41,32 @@ const Conversations: React.FC = () => {
             <Header />
             <div className="card-container">
                 <h1>Conversations</h1>
-                {conversations.map((conversation: any) => (
+                {/* {conversations.length != 0 ? (conversations.map((conversation: any) => (
                     <div className='conversation' key={conversation._id} id={conversation._id}>
                         <img src={conversation.user.profile ? conversation.user.profile : 'assets/person3.svg'} alt="" />
                         <h4>{conversation.user.first_name} {conversation.user.last_name}</h4>
                     </div>
 
-                ))}
+                ))) : <p>No Conversation Found!</p>} */}
+
+                <div className='user'>
+                    <img src={'assets/person3.svg'} alt="" />
+                    <a href={`/users/`}>
+                        <h4>Wadie Zerhouni</h4>
+                    </a>
+                </div>
+                <div className='user'>
+                    <img src={'assets/person3.svg'} alt="" />
+                    <a href={`/users/`}>
+                        <h4>Marwane Roumani</h4>
+                    </a>
+                </div>
+                <div className='user'>
+                    <img src={'assets/person3.svg'} alt="" />
+                    <a href={`/users/`}>
+                        <h4>Hamza Nabil</h4>
+                    </a>
+                </div>
 
             </div>
         </div>

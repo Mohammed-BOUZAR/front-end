@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 
+import './css/Notifications.css';
+
 const Notifications: React.FC = () => {
     const history = useHistory();
     const token = Cookies.get('token');
@@ -40,13 +42,30 @@ const Notifications: React.FC = () => {
             <Header />
             <div className="card-container">
                 <h1>Notifications</h1>
-                {notifications.map((notification: any) => (
+                {/* {notifications.length != 0 ? (notifications.map((notification: any) => (
                     <div className='notification' key={notification._id} id={notification._id}>
                         <img src={notification.user.profile ? notification.user.profile : 'assets/person3.svg'} alt="" />
                         <h4>{notification.user.first_name} {notification.user.last_name}</h4>
                     </div>
 
-                ))}
+                ))) : <p>No Notification Found!</p>} */}
+                <div className='notification'>
+                    <div>
+                        <img src='assets/person3.svg' alt="" />
+                        <h4>Mohammed Bouzar</h4>
+                    </div>
+                    <h4>Nouveau Post</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                </div>
+                <div className='notification'>
+                    <div>
+                        <img src='assets/person3.svg' alt="" />
+                        <h4>Mohammed Bouzar</h4>
+                    </div>
+                    <h4>Nouveau Post</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+
+                </div>
 
             </div>
         </div>

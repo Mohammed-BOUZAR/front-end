@@ -44,6 +44,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-container">
+      <img className='logo' src="assets/usmba.png" alt="" />
       <form className="login-form">
         <h1 className="login-title">Login</h1>
         <input

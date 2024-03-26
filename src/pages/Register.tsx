@@ -10,7 +10,7 @@ const Register: React.FC = () => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
-  const [state, setState] = useState('');
+  // const [state, setState] = useState('');
   // const [profile, setProfile] = useState('');
   const [department, setDepartment] = useState('');
   const [cin, setCin] = useState('');
@@ -29,7 +29,7 @@ const Register: React.FC = () => {
     console.log('Last Name:', lastName);
     console.log('Email:', email);
     console.log('Date of Birth:', dateOfBirth);
-    console.log('State:', state);
+    // console.log('State:', state);
     // console.log('Profile:', profile);
     console.log('Department:', department);
     console.log('CIN:', cin);
@@ -41,14 +41,26 @@ const Register: React.FC = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ firstName, lastName, email, dateOfBirth, state, cin, cne, password })
+      body: JSON.stringify({
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        date_birth: dateOfBirth,
+        cin,
+        cne,
+        password
+      })
     })
       .then(response => {
         if (response.ok) return history.push('/login');
-        else {
-          // Handle login error
-          throw new Error('Login failed');
-        }
+        return response.json();
+        // else {
+        //   // Handle login error
+        //   throw new Error('Login failed');
+        // }
+      })
+      .then(data => {
+        if(data.error) alert(data.error);
       })
       .catch(err => {
         alert(err);
@@ -57,6 +69,7 @@ const Register: React.FC = () => {
 
   return (
     <div className="register-container">
+      <img className='logo' src="assets/usmba.png" alt="" />
       <form className="register-form">
         <h1 className="register-title">Register</h1>
         <input
@@ -87,13 +100,13 @@ const Register: React.FC = () => {
           placeholder="Date of Birth"
           className="register-input"
         />
-        <input
+        {/* <input
           type="text"
           value={state}
           onChange={e => setState(e.target.value)}
           placeholder="State"
           className="register-input"
-        />
+        /> */}
         {/* <input
           type="text"
           value={profile}

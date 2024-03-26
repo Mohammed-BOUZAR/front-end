@@ -19,6 +19,10 @@ import Cookies from 'js-cookie';
 import Conversations from './pages/Conversations';
 import Messages from './pages/Messages';
 import Notifications from './pages/Notifications';
+import CreatePostForm from './pages/CreatePostForm';
+
+
+import './pages/css/Global.css'
 
 const App: React.FC = () => {
   const token = Cookies.get('token');
@@ -34,10 +38,11 @@ const App: React.FC = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/users" component={Users} />
           <Route exact path="/conversations" component={Conversations} />
-          <Route exact path="/messages" component={Messages} />
+          <Route exact path="/conversations/:conversationId/messages" component={Messages} />
           <Route exact path="/notifications" component={Notifications} />
-          <Route exact path="/users/:id" component={User} />
+          <Route exact path="/users/:userId" component={User} />
           <Route exact path="/posts" component={Posts} />
+          <Route exact path="/new_post" component={CreatePostForm} />
           <Route exact path="/posts/:postId" component={Post} />
           <Route exact path="/posts/:postId/comments" component={Comments} />
           <Route exact path="/posts/:postId/comments/:commentId" component={Comment} />
